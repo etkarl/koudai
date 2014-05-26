@@ -1,155 +1,74 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8"> <![endif]-->
-<!--[if gte IE 9 ]>    <html class="ie"> <![endif]-->
-<!--[if !(IE)]><!--> <html> <!--<![endif]-->
-<head>
-    <title>前端开发规范</title>
-    <meta content="text/html" charset="utf-8" />
-    <style type="text/css">
-        body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
-        ul, ol { list-style-type:none;}
-        body{ font:12px 宋体;color:#000; padding:0; margin:0 auto; text-align: left; background: #cad8e3 url(../images/background.gif) repeat-x 0 0; padding-top: 10px;}
-        .cl { clear: both; height: 0; line-height: 0; font-size: 0; text-indent: -4000px; }
-        .wrap{ width: 980px; margin: 0 auto; }
-        .box { margin-bottom: 10px; }
-        .box .cnt { height:100%; background: #fff; padding: 5px 10px; }
-        .box .bottom { background: url(http://img04.taobaocdn.com/imgextra/i4/58534052/T2j_eCXalbXXXXXXXX_!!58534052.gif) no-repeat 0 0; height:3px; font-size:0; line-height:0; }
-        .box .top { background: url(http://img03.taobaocdn.com/imgextra/i3/58534052/T2eCmoXkXbXXXXXXXX_!!58534052.gif) no-repeat 0 0; height:3px; font-size:0; line-height:0; }
+1、文件管理规范
+    1) 资源文件目录
+    背景图片目录(images)；样式文件目录(css)；脚本文件目录(js)；flash(flash)；上传文件目录(upload)           
+    2) 文件夹及文件命名
+    用简短有意义的英文或者拼音（不能出现中文命名）来命名。
+    ①文件夹命名规则: 全部小写。例如(emotions, download, mail)。
+    ②html,js,css文件命名规则: 第一个单词首字母小写,之后每个单词首字母大写,html文件后缀名统一为.htm。例如(index.htm, customizeCity.htm, register.js, dateSelect.js, base.css, mapApply.css)。 
+    ③图片命名规则: 第一个单词首字母小写,之后每个单词首字母大写,或者全部小写,单词间用下划线连接。例如(btn_sign.gif, bgTipBox.png)。
 
-        table{ border-collapse:collapse; border-spacing:0; margin-bottom:5px; margin-left:23px;}
-        table.special td{ text-align:center; border:#999 solid 1px; padding:5px 15px;}
+2、XHTML书写规范
+    1) 文档类型声明统一为<!DOCTYPE html>
+    2) 编码统一为utf-8;
+    3) 在引入CSS和JavaScript文件时不需要指定type属性;
+    4) 非特殊情况下样式和脚本代码必须独立于xhtml代码于外部文件中，样式文件必须外链至<head>...</head>之间，渲染执行脚本必须外链至页面底部;
+    5) 引入外部样式文件及脚本文件采用时间戳后缀，防止由于缓存问题导致页面不能及时更新;
+    6) 书写时采用制表符缩进(大小为4);
+    7) 编码必须遵循w3c标准,标签、属性及属性命名必须由小写字母及下划线数字组成,且所有标签必须闭合;属性值必须用双引号;
+    8) 充分利用无兼容性问题的html自身标签,比如span,em,strong,label,等等;需要为html元素添加自定义属性的时候,首先要考虑下有没有默认的已有的合适标签去设置,如果没有,可以使用须以”data-”为前缀来添加自定义属性，避免使用”data:”等其他命名方式;
+    9) 语义化html,如标题根据重要性用h1~h6(同一页面只能有一个h1),段落标记用p,列表用ul,内联元素中不可嵌套块级元素;
+    10) 尽可能使用html5标签，实现渐进增强效果（低版本浏览器请打补丁）
+    11) 能以背景形式呈现的图片,尽量写入css样式中;
+    12) 图片必须加上alt属性;给重要的元素和截断的元素加上title;
+    13) 给区块代码及重要功能(比如循环)加上合理的注释,方便后台添加功能:注释格式,‘–-’只能在注释的始末位置,不能出现2个或2个以上的"--";
+    14) 模块命名统一“mod-” 开头，例如：mod-slider mod-list。
 
-        #navigation { text-align:center; height:36px; line-height:36px; width:960px; background: url(http://img03.taobaocdn.com/imgextra/i3/58534052/T2C_KlXhhbXXXXXXXX_!!58534052.gif) no-repeat 0 0;margin: 5px 0; }
-        #navigation h2{ font-size:18px; font-family:Verdana, Arial, Helvetica, sans-serif;}
-        #main{ border: #e8e8e8 1px solid;  text-align: left; padding:0 5px 10px 5px; background:#f7f7f7;}
-        .bgH3{ font-size:12px; color:#fff; background: url(http://img04.taobaocdn.com/imgextra/i4/58534052/T23uukXnlbXXXXXXXX_!!58534052.jpg) no-repeat left 50%; line-height: 23px; margin:10px 0; padding-left:10px; width: 560px; height:23px; font-weight: bold; text-decoration: none}
-        .item{border: #e8e8e8 1px solid; text-align: left; padding:10px 5px;  background:#E7FAFA;}
-        .item p{line-height:20px; padding-left:23px;}
-        .item li,.okList{ line-height:23px; font-size:12px; font-weight:normal; padding-left:25px;}
-    </style>
-</head>
-<body>
-<div class="wrap">
-    <div class="box">
-        <div class="top"></div>
-        <div class="cnt">
-            <div id="navigation">
-                <h2>Web Front-end Development Document Specification(www.koudai.com)</h2>
-            </div>
-            <div>
-                <h3 class="bgH3">1、文件管理规范</h3>
-                <div class="item">
-                    <h4 class="okList">1) 资源文件目录</h4>
-                    <table class="special">
-                        <tr>
-                            <td>背景图片目录</td><td>样式文件目录</td><td>脚本文件目录</td><td>flash文件目录</td><td>上传文件目录</td>
-                        </tr>
-                        <tr>
-                            <td>images</td><td>css</td><td>js</td><td>flash</td><td>upload</td>
-                        </tr>
-                    </table>
-                    <h4 class="okList">2) 文件夹及文件命名</h4>
-                    <p>
-                        用简短有意义的英文或者拼音（不能出现中文命名）来命名。<br />
-                        ①文件夹命名规则: 全部小写。例如(emotions, download, mail)。<br />
-                        ②html,js,css文件命名规则: 第一个单词首字母小写,之后每个单词首字母大写,html文件后缀名统一为.htm。例如(index.htm, customizeCity.htm, register.js, dateSelect.js, base.css, mapApply.css)。   <br />
-                        ③图片命名规则: 第一个单词首字母小写,之后每个单词首字母大写,或者全部小写,单词间用下划线连接。例如(btn_sign.gif, bgTipBox.png)。<br />
-                    </p>
-                </div>
-            </div>
-            <div>
-                <h3 class="bgH3">2、XHTML书写规范</h3>
-                <ul class="item">
-                    <li>1) 文档类型声明统一为&lt;!DOCTYPE    html&gt;</li>
-                    <li>2) 编码统一为utf-8;</li>
-                    <li>3) 在引入CSS和JavaScript文件时不需要指定type属性;</li>
-                    <li>4) 非特殊情况下样式和脚本代码必须独立于xhtml代码于外部文件中，样式文件必须外链至&lt;head&gt;...&lt;/head&gt;之间，渲染执行脚本必须外链至页面底部;</li>
-                    <li>5) 引入外部样式文件及脚本文件采用时间戳后缀，防止由于缓存问题导致页面不能及时更新;</li>
-                    <li>6) 书写时采用制表符缩进(大小为4);</li>
-                    <li>7) 编码必须遵循w3c标准,标签、属性及属性命名必须由小写字母及下划线数字组成,且所有标签必须闭合;属性值必须用双引号;</li>
-                    <li>8) 充分利用无兼容性问题的html自身标签,比如span,em,strong,label,等等;需要为html元素添加自定义属性的时候,首先要考虑下有没有默认的已有的合适标签去设置,如果没有,可以使用须以”data-”为前缀来添加自定义属性，避免使用”data:”等其他命名方式;</li>
-                    <li>9) 语义化html,如标题根据重要性用h1~h6(同一页面只能有一个h1),段落标记用p,列表用ul,内联元素中不可嵌套块级元素;</li>
-                    <li>10) 尽可能使用html5标签，实现渐进增强效果（低版本浏览器请打补丁）</li>
-                    <li>11) 能以背景形式呈现的图片,尽量写入css样式中;</li>
-                    <li>12) 图片必须加上alt属性;给重要的元素和截断的元素加上title;</li>
-                    <li>13) 给区块代码及重要功能(比如循环)加上合理的注释,方便后台添加功能:注释格式,‘–-’只能在注释的始末位置,不能出现2个或2个以上的"--";</li>
-                    <li>14) 模块命名统一“mod-” 开头，例如：mod-slider  mod-list</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="bgH3">3、CSS书写规范</h3>
-                <ul class="item">
-                    <li>1) 编码统一为utf-8;</li>
-                    <li>2) 全局定义以及全站公共部分共用common,包含reset(重置浏览器差异),base常用规则(链接、字体、隐藏、清浮动等)、布局,global（公用基本样式）;</li>
-                    <li>3) 选择符命名及其使用：<br />
-                        <div style="padding-left:20px;">
-                            ① 命名请尽量使用英文避免使用汉语拼音,类使用划线命名法，如(main-body，site-nav-bd);  id命名：“J_”作为钩子开头，此后单词首字母大写，如(J_SearchTab，J_Notice)。命名要语义化,简明化,尽量使用简短的英文单词组合;<br />
-                            ② id是唯一的并是父级的,class是可以重复的并是子级的,所以id一般使用在大的模块上,class可用在重复使用率高及子级中;<br />
-                            ③ 严禁出现#id ul li(长度超过2以上的派生类)等类似选择器;允许.active .classname;减少使用基于元素的类选择器:div.classname;减少属性选择器：#id[title=koudai];<br />
-                            ④ 严禁使用 “*” 选择符;
-                        </div>
-                    </li>
-                    <li>4) CSS属性书写顺序尽量遵循:显示属性->盒模型->文字属性->排版->其他。例如:.site-nav-bd{display:block;position:abtolute;left:2px;top:0;width:50px;height:19px;border:1px solid #ccc;padding:5px 2px;font:Arial 12px/19px;text-align:center;vertical-align:middle;color:#666;background:#999;cursor:pointer;}</li>
-                    <li>5) 尽量使用高级语法简写代码：body{font:italic bold 12px/20px arial,sans-serif;} input{padding:2px 3px; border:1px solid #999};</li>
-                    <li>6) 书写代码前,考虑并提高样式重复使用率,归类class分组，以便通用性;</li>
-                    <li>7) 背景图片请尽可能使用sprite技术,减少http请求;</li>
-                    <li>8) 减少使用影响性能的属性,比如position:absolute||float;性能比较:“默认” 优于 “定位” 优于 “浮动”;</li>
-                    <li>9) 尽量不要使用expression等不兼容的属性;</li>
-                    <li>10) 尽量不使用hack写出兼容当前主流浏览器(ie6~ie9,firefox,chrome,safari,opera)的代码。例如:float元素的父元素不能指定clear属性,务必指定width属性(尽量使用em而不是px做单位),尽量不指定margin和padding等属性(可以在float元素内部嵌套一个标签来设置margin和padding)。</li>
-                    <li>11) 文件头部注释须标明作者及修改日期。必须为大区块样式添加合理注释;</li>
-                    <li>12) 测试完成后压缩合并css文件,力求降低http请求;</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="bgH3">4、JavaScript书写规范</h3>
-                <ul class="item">
-                    <li>1) 编码统一为utf-8;</li>
-                    <li>2) 书写时采用制表符缩进(大小为4);</li>
-                    <li>3) 常量所有字符大写，变量所有字符小写;类命名:首字母大写驼峰式命名.如LazyLoad;函数命名:首字母小写驼峰式命名.如arrEach();</li>
-                    <li>4) 命名语义化,尽可能利用英文单词或其缩写;代码结构明了,提高函数重用率;</li>
-                    <li>5) 文件头部注释须标明作者及修改日期。函数注释须标明函数功能，参数及返回值;</li>
-                    <li>6) 书写过程过,每行代码结束必须有分号;</li>
-                    <li>7) 声明变量必须用var ,包括循环 遍历:如：for(var i=0;i<10;i+=1){},for(var value in obj){};注意减少全局变量的声明 避免变量混乱;</li>
-                    <li>8) 条件判断后执行代码块必须加花括号:if(){...};for(){...}</li>
-                    <li>9) 规范json书写:必须以花括号开始和结束;</li>
-                    <li>10) 测试完成后压缩合并JavaScript文件,力求降低http请求;</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="bgH3">5、性能优化规范</h3>
-                <ul class="item">
-                    <li>1) 由于大多都是操作DOM，所以在查找节点时务必书写高效的选择器(jQuery);</li>
-                    <li>2) 缓存频繁使用的对象、数组及相关的属性;</li>
-                    <li>3) 使脚本尽可能少地运行或者不运行(按需加载,比如选项卡数据在页面加载时只加载第一个选项卡的内容数据，其他选项卡异步提交加载);</li>
-                    <li>4) 合理的使用图片格式，并进行压缩优化，保持图片最佳视觉以及大小;</li>
-                    <li>5) 对于大数据，多屏页面进行数据延迟加载处理，以及图片预加载;</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="bgH3">6、版本控制规范</h3>
-                <ul class="item">
-                    <li>1) 代码提交前清理无关文件(比如缩略图缓存数据文件thumb.db等等);</li>
-                    <li>2) 对于CSS以及JS约定好的代码注释必须加上之后再提交到SVN，方便SVN自动更新文件编辑信息以及版本号;</li>
-                    <li>3) 变更文件(特别是模版文件以及重要的页面)比较大时最好做好备份工作，方便发布到正式线出现问题时快速撤回;</li>
-                    <li>4) 代码修改或提交前获取下最新版本，有规律的提交代码；签入代码前经过良好的测试;</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="bgH3">7、开发调试工具</h3>
-                <ul class="item">
-                    <li>1) 前端常用编辑器/IDE(开发)，intellij idea，sublime Text;</li>
-                    <li>2) IDE自带/浏览器插件(调试)，chrome，firebug，ietester;</li>
-                    <li>3) CSS,JS压缩工具（发布），Ant;</li>
-                    <li>4) 线上环境测试（线上调试），fiddler;</li>
-                    <li>5) 其他辅助工具;</li>
-                </ul>
-            </div>
+3、CSS书写规范
+    1) 编码统一为utf-8;
+    2) 全局定义以及全站公共部分共用common,包含reset(重置浏览器差异),base常用规则(链接、字体、隐藏、清浮动等)、布局,global（公用基本样式）;
+    3) 选择符命名及其使用：
+        ① 命名请尽量使用英文避免使用汉语拼音,类使用划线命名法，如(main-body，site-nav-bd); id命名：“J_”作为钩子开头，此后单词首字母大写，如(J_SearchTab，J_Notice)。命名要语义化,简明化,尽量使用简短的英文单词组合;
+        ② id是唯一的并是父级的,class是可以重复的并是子级的,所以id一般使用在大的模块上,class可用在重复使用率高及子级中;
+        ③ 严禁出现#id ul li(长度超过2以上的派生类)等类似选择器;允许.active .classname;减少使用基于元素的类选择器:div.classname;减少属性选择器：#id[title=koudai];
+        ④ 严禁使用 “*” 选择符;
+    4) CSS属性书写顺序尽量遵循:显示属性->盒模型->文字属性->排版->其他。例如:.site-nav-bd{display:block;position:abtolute;left:2px;top:0;width:50px;height:19px;border:1px solid #ccc;padding:5px 2px;font:Arial 12px/19px;text-align:center;vertical-align:middle;color:#666;background:#999;cursor:pointer;}
+    5) 尽量使用高级语法简写代码：body{font:italic bold 12px/20px arial,sans-serif;} input{padding:2px 3px; border:1px solid #999};
+    6) 书写代码前,考虑并提高样式重复使用率,归类class分组，以便通用性;
+    7) 背景图片请尽可能使用sprite技术,减少http请求;
+    8) 减少使用影响性能的属性,比如position:absolute||float;性能比较:“默认” 优于 “定位” 优于 “浮动”;
+    9) 尽量不要使用expression等不兼容的属性;
+    10) 尽量不使用hack写出兼容当前主流浏览器(ie6~ie9,firefox,chrome,safari,opera)的代码。例如:float元素的父元素不能指定clear属性,务必指定width属性(尽量使用em而不是px做单位),尽量不指定margin和padding等属性(可以在float元素内部嵌套一个标签来设置margin和padding)。
+    11) 文件头部注释须标明作者及修改日期。必须为大区块样式添加合理注释;
+    12) 测试完成后压缩合并css文件,力求降低http请求;
 
-        </div>
-        <div class="bottom"></div>
-    </div>
-</div>
-</body>
-</html>
+4、JavaScript书写规范
+    1) 编码统一为utf-8;
+    2) 书写时采用制表符缩进(大小为4);
+    3) 常量所有字符大写，变量所有字符小写;类命名:首字母大写驼峰式命名.如LazyLoad;函数命名:首字母小写驼峰式命名.如arrEach();
+    4) 命名语义化,尽可能利用英文单词或其缩写;代码结构明了,提高函数重用率;
+    5) 文件头部注释须标明作者及修改日期。函数注释须标明函数功能，参数及返回值;
+    6) 书写过程过,每行代码结束必须有分号;
+    7) 声明变量必须用var ,包括循环 遍历:如：for(var i=0;i<10;i+=1){},for(var value in obj){};注意减少全局变量的声明 避免变量混乱;
+    8) 条件判断后执行代码块必须加花括号:if(){...};for(){...}
+    9) 规范json书写:必须以花括号开始和结束;
+    10) 测试完成后压缩合并JavaScript文件,力求降低http请求;
+
+5、性能优化规范
+    1) 由于大多都是操作DOM，所以在查找节点时务必书写高效的选择器(jQuery);
+    2) 缓存频繁使用的对象、数组及相关的属性;
+    3) 使脚本尽可能少地运行或者不运行(按需加载,比如选项卡数据在页面加载时只加载第一个选项卡的内容数据，其他选项卡异步提交加载);
+    4) 合理的使用图片格式，并进行压缩优化，保持图片最佳视觉以及大小;
+    5) 对于大数据，多屏页面进行数据延迟加载处理，以及图片预加载;
+
+6、版本控制规范
+    1) 代码提交前清理无关文件(比如缩略图缓存数据文件thumb.db等等);
+    2) 对于CSS以及JS约定好的代码注释必须加上之后再提交到SVN，方便SVN自动更新文件编辑信息以及版本号;
+    3) 变更文件(特别是模版文件以及重要的页面)比较大时最好做好备份工作，方便发布到正式线出现问题时快速撤回;
+    4) 代码修改或提交前获取下最新版本，有规律的提交代码；签入代码前经过良好的测试;
+
+7、开发调试工具
+    1) 前端常用编辑器/IDE(开发)，intellij idea，sublime Text;
+    2) IDE自带/浏览器插件(调试)，chrome，firebug，ietester;
+    3) CSS,JS压缩工具（发布），Ant;
+    4) 线上环境测试（线上调试），fiddler;
+    5) 其他辅助工具;

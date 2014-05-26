@@ -1,0 +1,39 @@
+﻿<div class="mod-dialog e-dialog hide" id="J_FlowDialog">
+    <header>
+        <h1 class="title">表维护</h1>
+        <a href="javascrip:void(0)" title="关闭" class="dialog-close-btn">×</a>
+    </header>
+    <table class="dialog-table">
+        <tr>
+            <td class="col1">申请人：</td>
+            <td class="col2">云杰</td>
+        </tr>
+        <tr>
+            <td class="col1">申请时间：</td>
+            <td class="col2">2013-12-12</td>
+        </tr>
+        <tr>
+            <td class="col1">审批：</td>
+            <td class="col2">
+                <input type="radio" name="flow" value="0" checked="checked" />通过    
+                <input type="radio" name="flow" value="1" />否决
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">DDL：</td>
+            <td class="col2">
+                <textarea style="width:400px;height:80px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">.Meta：</td>
+            <td class="col2">
+                <textarea style="width:400px;height:80px;"></textarea>
+            </td>
+        </tr>
+    </table>
+    <footer class="footer">
+        <input type="button"  value="保 存" class="e-btn e-btn-primary mr10 okBtn" id="J_AddStarSubmit" /> 
+        <input type="button"  value="取 消" class="e-btn close" />
+    </footer>
+</div>

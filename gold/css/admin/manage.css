@@ -1,0 +1,115 @@
+﻿/* reset */
+body,ul,ol,li,dl,dt,dd,p,blockquote,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,table,tr,td,img,strong,em,div{margin:0;padding:0}
+body{font:12px/1.5 tahoma,arial,\5b8b\4f53;color:#333;-webkit-text-size-adjust:none;background:#fafafa;}  
+h3,h4{font-size:12px}
+ul,ol,li{list-style:none}
+fieldset,img {border:0}
+s{text-decoration:none}
+table{ border-collapse:collapse; border-spacing:0;}
+input{outline:none;}
+/* display */
+.show{display:block}  
+.hide{display:none}
+.fl{float:left}
+.fr{float:right} 
+.clearfix:after{content:"."; display:block; height:0; clear:both;visibility:hidden} 
+*html .clearfix{height:1%}  
+*+html .clearfix{height:1%} 
+/* font and text */
+a{text-decoration:none;color:#333}
+a:hover{text-decoration:none;color:#38a4ff;}
+a.gray{color:#999;}
+a.gray:hover{text-decoration:underline;color:#999}
+a.blue{color:#0040d6}
+.green{color:#6cb927}
+.red{color:#e54f00}
+.gray{color:#999}
+.tc{text-align:center}  
+.tl{text-align:left}  
+.tr{text-align:right}
+.clip{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+/* box */
+.mt20{margin-top:20px}
+.mlr5{margin:0 5px}
+.mr10{margin-right:10px}
+.pl20{padding-left:20px}
+.w250{width:250px}
+.w540{width:540px}
+.w290{width:290px}
+.w90{width:90px}
+.w420{width:420px}
+/* layout */
+.layout{width:1050px;margin:20px auto}
+/* ico */
+@font-face {font-family: 'iconfont';
+    src: url('iconfonts/iconfont.eot'); /* IE9*/
+    src: url('iconfonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfonts/iconfont.svg#svgFontName') format('svg'); /* iOS 4.1- */
+}
+.icon{font-family:"iconfont";font-size:18px;font-style:normal;cursor:pointer;color:#ccc;}
+.icon:hover{color:#666}
+.e-btn{padding-top: 4px;padding-bottom:5px;}
+.e-pager{text-align:right}
+.e-pager .choose {background: #f5f5f5;display: inline-block;font-weight: bold;border: 0;color: #219bf9;cursor: default;padding: 3px 10px 4px;line-height: 18px;}
+.e-pager .page{width:20px;text-align:center}
+.split{padding:0 3px;color:#999;}
+/* tab */
+.tab-hd {position:relative;height:30px;background-color:#f5f5f5;border:1px solid #e1e1e1;}
+.tab-hd h4{padding-left:15px;line-height:30px;font-weight:bold; }
+.tab-nav{position:absolute; top:-1px;}
+.tab-nav li {position:relative;float:left;height:30px;border:1px solid #e1e1e1;border-left:none;padding:0 12px;cursor:pointer;font:bold 14px/30px "\5FAE\8F6F\96C5\9ED1";}
+.tab-nav li.tab-cur {background-color:#fff;font-weight:bold;border-top:2px solid #52ca00;border-bottom:1px solid #e1e1e1;border-bottom:none;}
+/* mod-mini-nav */
+.mod-mini-nav{background:#f5f5f5;border-bottom:1px solid #dcdcdc;height:27px;line-height:27px;}
+.mod-mini-nav .mini-nav-bd{width:1050px;margin:0 auto;position:relative;}
+.mini-nav-bd .short-menu{position:absolute;right:0;top:3px;}
+.mini-nav-bd .short-menu a{}
+.mini-nav-bd .short-menu span{font-weight:400;margin:0 3px;color:#999}
+.mod-header{min-width:1250px;height:65px;margin-top:1px;border-top:1px solid #34a0df;border-bottom:1px solid #418b2c;background-color:#219bf9;
+background-repeat:repeat-x;background-image:linear-gradient(#71c4f4, #219bf9);}
+.mod-header .header-bd{width:1050px;margin:0 auto;position:relative;}
+.mod-header .logo{position:absolute;left:0;top:10px;width:355px;height:40px;}
+.mod-header .logo a{display:inline-block;float:left;}
+.mod-header .logo a.a1{text-indent:-9999px;width:149px;height:40px;background:url(../../images/admin-logo.png) 4px 8px  no-repeat;}
+.mod-header .logo a.a2{position:relative;left:10px;top:7px;width:205px;height:40px;color:#fff;font-family:'\5FAE\8F6F\96C5\9ED1';font-size:21px}
+.mod-header .main-menu{position:absolute;left:370px;top:32px;}
+.mod-header .main-menu li{float:left;line-height:12px;border:1px solid #036fae;border-bottom:none;border-radius:3px 3px 0 0;margin-right:2px;background-color: #30a7ec;}
+.mod-header .main-menu li.current{background: #fafafa;filter: none;}
+.mod-header .main-menu li a{color:#fff;padding:10px 15px;display: block;border-radius: 3px 3px 0 0;border-top: 1px solid #34a0df;font-size: 13px;font-weight: bold;}
+.mod-header .main-menu li a:hover{color:#fff}
+.mod-header .main-menu li.current a{color: #000;}
+.mod-header .version{position:absolute;right:0;top:23px;color:#fff;}
+/* dialog */
+.dialog-table{margin:15px 0 15px 0;width:100%;}
+.dialog-table td{padding:5px 0}
+.dialog-table td .e-select{width:100px}
+.dialog-table td.col1{width:100px;padding-right:10px;text-align:right;}
+.dialog-table td.col2{width:230px;}
+/* multiple */
+.mul-left,.mul-center,.mul-right{float:left;width: 150px;}
+.mul-center{width: 120px;}
+.mul-center input{display: block; margin: 10px auto;width: 80px;}
+.mul-left select,.mul-right select{width: 100%; height: 160px;}
+/* footer */
+.mod-links{margin:50px auto 20px;text-align:center;line-height:23px;color:#999;}
+.mod-links a{color:#999;}
+.mod-links b{font-weight:400;margin:0 3px;}
+/* mod-left */
+.mod-left{float:left;margin-right:10px;width:230px;}
+.mod-left dl dt,.mod-left dl dd{height:41px;line-height:41px;}
+.mod-left dl dt{background:#ddd;font-size:14px;font-weight:bold;padding-left:20px;}
+.mod-left dl dd{background:#e1e1e1;border-bottom:1px solid #d2d2d2;cursor:pointer;}
+.mod-left dl dd a{display:block;padding-left:40px;}
+.mod-left dl dd:hover,.mod-left dl dd.current{border-left:2px solid #52ca00;font-weight:bold;background:#fff;}
+.mod-left dl dd:hover a,.mod-left dl dd.current a{padding-left:37px;color:#444;}
+/* mod-main */
+.mod-main{float:left;width:770px;border:1px solid #e1e1e1;padding:15px 19px;min-height:540px;}
+.mod-main .e-tips{padding:10px 15px;margin-bottom:20px;background:#f9eeb9;border:1px solid #efc45f}
+.mod-main .tab-panel .e-tips{margin:10px 0}
+/* mod-main */
+.template{margin:10px 0;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;}
+.table-number{width:580px;}
+.table-number th,.table-number td{text-align:left;padding:5px 0 5px 10px}
+.table-number .order{width:20px;text-align:center}

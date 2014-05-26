@@ -1,0 +1,84 @@
+﻿<div class="e-dialog mod-dialog checkbox-list-dialog hide">
+	<input type="hidden" class="v-result" data-condition='' data-conditionName="" />
+    <h2>
+        <label>省/直辖市</label> 
+        <span class="v-total">(已选0)</span>     
+        <span title="关闭" class="icon close">&#x3437;</span>
+    </h2>
+    <div class="content-wrap">
+        <div class="content-panel">
+            <div>
+                <label class="e-label-check selectAll">全选</label>
+            </div>
+            <div class="checkbox-list-container big">
+                <label class="e-label-check" data-id="1" data-name="辽宁">辽宁</label>
+                <label class="e-label-check" data-id="2" data-name="吉林">吉林</label>
+                <label class="e-label-check on" data-id="3" data-name="山东">山东</label>
+                <label class="e-label-check" data-id="4" data-name="上海">上海</label>
+                <label class="e-label-check" data-id="5" data-name="河北">河北</label>
+                <label class="e-label-check" data-id="2" data-name="吉林">辽宁</label>
+                <label class="e-label-check" data-id="1" data-name="辽宁">辽宁</label>
+                <label class="e-label-check" data-id="2" data-name="吉林">吉林</label>
+                <label class="e-label-check on" data-id="3" data-name="山东">山东</label>
+                <label class="e-label-check" data-id="4" data-name="上海">上海</label>
+                <label class="e-label-check" data-id="5" data-name="河北">河北</label>
+                <label class="e-label-check" data-id="2" data-name="吉林">辽宁</label>
+            </div>
+        </div>
+    </div>
+    <p class="option-panel">
+        <input type="button" value="确 定" class="e-btn e-btn-primary mr10 btnOk" />
+        <input type="button" value="取 消" class="e-btn close" />
+    </p>
+</div>
+<script>
+    (function ($) {
+        var checkboxListControl = new CheckboxListControl({
+            container: $('.checkbox-list-dialog')
+        });
+        checkboxListControl.init();
+        function CheckboxListControl(options) {
+            this.container = options.container;
+            this.totalLabel = this.container.find('.v-total');
+            this.listContainer = this.container.find('.checkbox-list-container');
+            this.resultInput = this.container.find('.v-result');
+            this.selectAllCheck = this.container.find('.selectAll');
+            this.getCount = function () {
+                return this.listContainer.find('.e-label-check.on').length;
+            };
+            this.setValue = function () {
+                var that = this, keyArr = [], valArr = [], total = that.listContainer.find('.e-label-check.on').length;
+                if (total > 0) {
+                    that.container.find('.btnOk').removeClass('e-disabled').addClass('e-btn-primary');
+                }
+                else {
+                    that.container.find('.btnOk').removeClass('e-btn-primary').addClass('e-disabled');
+                }
+                that.listContainer.find('.e-label-check.on').each(function () {
+                    keyArr.push($(this).attr('data-id'));
+                    valArr.push($(this).attr('data-name'));
+                });
+                that.totalLabel.html('(已选' + total + ')');
+                that.resultInput.attr('data-condition', keyArr.join(',')).attr('data-conditionName', valArr.join(','));
+            };
+            this.init = function () {
+                var that = this;
+                that.listContainer.delegate('.e-label-check', 'click', function () {
+                    $(this).toggleClass('on');
+                    that.setValue();
+                });
+                that.container.delegate('.selectAll', 'click', function () {
+                    if ($(this).hasClass('on')) {
+                        $(this).removeClass('on');
+                        that.listContainer.find('.e-label-check').removeClass('on');
+                    }
+                    else {
+                        $(this).addClass('on');
+                        that.listContainer.find('.e-label-check').addClass('on');
+                    }
+                    that.setValue();
+                });
+            };
+        }
+    })(jQuery);
+</script>

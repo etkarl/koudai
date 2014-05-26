@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html> 
+<!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <html class="ie ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html class="ie ie8"> <![endif]--> 
+<!--[if gte IE 9 ]>    <html class="ie"> <![endif]--> 
+<!--[if !(IE)]><!--> <html> <!--<![endif]--> 
+<head>
+    <title>黄金策--卖家版</title>
+	<!--[if IE]>
+        <script src="http://a.tbcdn.cn/apps/tdata/js/base/html5-reset.js"></script>
+    <![endif]-->
+	<link href="http://a.tbcdn.cn/apps/tdata/css/global/general.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/dialog.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/input-box.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/button.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/table.css" rel="stylesheet" />
+    <link href="css/DatePicker/base.css" rel="stylesheet" />
+    <link href="css/DatePicker/clean.css" rel="stylesheet" />
+    <link href="css/calendar.css" rel="stylesheet"/>
+    <link href="css/gold.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <div class="mod-mini-nav">
+        <div class="mini-nav-bd clearfix">
+            <a href="#" class="small-logo">淘数据</a>
+            <ul class="quick-menu">
+                <li>
+                    <a href="#" class="menu-links">使用帮助</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">问题反馈</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">权限申请</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">淘数据</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">巨侠</a>
+                    [<a href="#">退出</a>]
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mod-nav">
+        <div class="nav-bd">
+            <h1 class="logo"></h1>
+            <div class="version-select">
+                <select class="chosen-select-no-single" id="J_VersionSelect" tabindex="-1" style="width:110px;">
+                    <option data-url="">卖家分析版</option>
+                    <!--
+				    <option data-url="">淘宝商品版</option>
+				    <option data-url="">淘宝商家版</option>
+				    <option data-url="">阿里云专版</option>
+                    -->
+			    </select>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="layout gold-saler-step1 clearfix" id="J_Container">
+    <h3 class="mod-title clearfix J_TitlePanel">
+        <b class="yahei J_Title">新建群组</b>
+        <span class="e-btn J_BtnMyGroup">我的群组</span>
+        <span class="e-btn J_BtnNewGroup">新建群组</span>
+    </h3>
+    <div class="mod-group J_GroupPanel">
+        <ul class="clearfix J_GroupList" >
+            <li data-id="1">
+                <h5>天猫超级大卖家</h5>
+                <b class="ammout">8888</b>
+            </li>
+            <li data-id="2">
+                <h5>淘宝超级大卖家</h5>
+                <b class="ammout">9999</b>
+            </li>
+            <li data-id="3">
+                <h5>聚划算超级大卖家</h5>
+                <b class="ammout">6666</b>
+            </li>
+            <li data-id="4">
+                <h5>服饰超级大卖家</h5>
+                <b class="ammout">5555 </b>
+            </li>
+        </ul>
+    </div>
+    <h3 class="mod-title clearfix J_DetailTitlePanel">
+        <b class="yahei">群组详情</b>
+    </h3>
+    <div class="group-empty">
+        <img src="images/groupEmpty.png" alt="还没有群组哦" />
+    </div>
+    <div class="mod-main clearfix">
+        <div class="mod-main-left">
+            <div class="filter-init">
+                <div class="no-data"></div>
+            </div>
+            <div class="filter">
+                <p class="advance J_SpecialList">
+                    <!--
+                    <span class="J_SpanTime" title="2013-06-18" data-id="1" data-control="1" data-condition="2013-06-18">2013-06-18</span>
+                    <span class="J_SpanBu" title="天猫" data-id="2" data-control="8" data-condition="天猫">天猫</span>
+                    <span class="J_SpanCategory" title="女装,女鞋,游戏点卡,数码,家居" data-condition="女装,女鞋,游戏点卡,数码,家居" data-id="3" data-control="5">女装,女鞋,游戏点卡,数码,家居</span>
+                    -->
+                </p>
+                <ul class="J_NormalList">
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="mod-main-right">
+            <div class="mod-process J_ProcessPanel">
+                <p class="rename-box J_RenamePanel">
+                    <label class="J_LabelGroupName">群主买家数</label>
+                    <input type="text" placeholder="给群组起个名字，最多18个字" class="e-input-box J_InputGroupName" />
+                </p>
+                <b class="ammout J_TotalPv">8235</b>
+                <div class="step1-option-box">
+                    <span class="e-btn mr10 J_BtnSave">保存为我的群组</span>
+                    <span class="e-btn J_BtnViewDetail">详情数据</span>
+                </div>
+                <div class="step2-option-box">
+                    <span class="e-btn mr10 J_BtnSave">保 存</span>
+                    <a href="javascript:void(0)" class="J_ConditionModify">修改条件</a>
+                </div>
+                <div class="edit-option-box">
+                    <a href="javascript:void(0)" class="J_ConditionModify road">修改条件</a>
+                    <span class="cut">|</span>
+                    <a href="javascript:void(0)" class="J_BtnCopy">复制群组</a>
+                    <span class="cut">|</span>
+                    <a href="javascript:void(0)" class="J_BtnDelete">删除群组</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mod-content J_QuotaPanel">
+        <div class="mod-quota1">
+            <input type="text" class="e-input-box time J_InputQuotaTime" readonly="readonly"  value="2014-02-08" id="J_Gmt_N" />
+            <div id="J_SingleCalendarPanel_N" class="single-calendar-panel" style="position:absolute;left:0;top:30px;"></div>
+            <select data-current="" class="chosen-select-no-single J_SelectQuotaBU" tabindex="-1" style="width:200px;">
+                <option value="">选择业务线</option>
+                <option value="天猫">天猫</option>
+				<option value="集市">集市</option>
+				<option value="聚划算">聚划算</option>
+				<option value="淘点点">淘点点</option>
+				<option value="支付宝">支付宝</option>
+			</select>
+            <input type="text" readonly="readonly" class="e-input-box catetory J_InputQuotaCategory" data-condition="" data-conditionName=""   placeholder="点击选择类目，可多选" />
+        </div>
+        <div class="mod-quota2">
+            <table class="quota-table J_QuotaTable">
+                <tr>
+                    <td class="col1">基础类</td>
+                    <td>
+                        <dl>
+                            <dt>当日总流量</dt>
+                            <dd data-id="1" data-control="1" data-condition="2012-12-12">开店时间</dd>
+                            <dd data-id="2" data-control="2" data-condition="2012-12-12,2013-05-09">A类处罚起止时间</dd>
+                            <dd data-id="3" data-control="3" data-condition="4000,50000">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="4" data-control="4" data-condition="浙江,江西,上海,广东,江苏">checkboxList</dd>
+                            <dd data-id="5" data-control="5" data-condition="浙江,江西,上海,广东,江苏">textarea</dd>
+                            <dd data-id="6" data-control="6" data-condition="浙江,江西,上海,广东,江苏">卖家所在省份</dd>
+                            <dd data-id="7" data-control="7" data-condition="浙江,江西,上海,广东,江苏">卖家所在省份</dd>
+                            <dd data-id="8" data-control="1" data-condition="浙江,江西,上海,广东,江苏">日期</dd>
+                        </dl>
+                        <!--
+                        <dl>
+                            <dt>当日流量转化率</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天日均PV</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天流量转化率</dt>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天日均PV</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                        </dl>
+                        -->
+                    </td>
+                </tr>
+                <!--
+                <tr>
+                    <td class="col1">浏览类</td>
+                    <td>
+                        <dl>
+                            <dt>当日总流量</dt>
+                            <dd data-id="1" data-control="1" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                        </dl>
+                        <dl>
+                            <dt>当日流量转化率</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天日均PV</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天流量转化率</dt>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天日均PV</dt>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="1" data-control="1" data-condition="">当日总流量</dd>
+                            <dd data-id="2" data-control="2" data-condition="">当日流量转化率</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天流量转化率</dt>
+                            <dd data-id="3" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="6" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="4" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="5" data-control="3" data-condition="">最近30天日均PV</dd>
+                        </dl>
+                        <dl>
+                            <dt>最近30天流量转化率</dt>
+                            <dd data-id="63" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="64" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="65" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="66" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                            <dd data-id="63" data-control="3" data-condition="">最近30天总流量</dd>
+                            <dd data-id="64" data-control="3" data-condition="">最近30天日均流量</dd>
+                            <dd data-id="65" data-control="3" data-condition="">最近30天日均PV</dd>
+                            <dd data-id="66" data-control="3" data-condition="">最近30天日均支付宝成交金额</dd>
+                        </dl>
+                    </td>
+                </tr>
+                -->
+            </table>
+        </div>
+    </div>
+
+    <div class="mod-content J_DetailWrap">
+        <div class="gray-panel J_DetailTitle clearfix">
+            <div class="e-option">
+                <input type="text" class="e-input-box time J_InputDetailTime" value="2014-02-08" id="J_Gmt_Q" />
+                <div id="J_SingleCalendarPanel_Q" class="single-calendar-panel"></div>
+                <span class="e-btn">
+                    <i class="icon i-config">&#x343f;</i>
+                    指标设置
+                </span>
+                <span class="e-btn">
+                    <i class="icon i-download">&#x3439;</i>
+                    下载数据
+                </span>
+            </div>
+        </div>
+        <div class="J_DetailPanel">
+            <!--
+            <div class="table-detail-wrap">
+                <table class="e-table J_DetailTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>卖家Nick</span>
+                            </th>
+                            <th>
+                                <span>最近30天日均支付宝成交金额</span> 
+                            </th>
+                            <th>
+                                <span>开店时间</span> 
+                            </th>
+                            <th>
+                                <span>DSR</span> 
+                            </th>
+                            <th>
+                                <span>所在城市</span> 
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>小米官方旗舰店</td>
+                            <td>239393392</td>
+                            <td>2011-12-23</td>
+                            <td>4.2568989</td>
+                            <td>杭州</td>
+                        </tr>
+                        <tr>
+                            <td>小米官方旗舰店</td>
+                            <td>239393392</td>
+                            <td>2011-12-23</td>
+                            <td>4.2568989</td>
+                            <td>杭州</td>
+                        </tr>
+                    </tbody>      
+                </table>
+            </div>
+            <div class="gray-panel clearfix">
+                <div class="e-pager">
+                    <button onclick="javascript:void(0);" class="e-btn choose">1</button>   
+                    <button onclick="javascript:void(0);" class="e-btn">2</button>   
+                    <button onclick="javascript:void(0);" class="e-btn">3</button>   
+                    <button onclick="javascript:void(0);" class="e-btn">4</button>   
+                    <span>...</span>
+                    <button onclick="javascript:void(0);" class="e-btn">118</button>   
+                    <button title="下一页" onclick="javascript:void(0);" class="e-btn">下一页</button>   
+                    <span>共118页，到第</span> 
+                    <input name="pageIndex" type="text" id="pageNum" value="1" class="e-input-box" />
+                    <span>页</span>
+                    <button name="pageto" class="e-btn">确定</button>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+<footer>
+    <nav>
+        <div class="mod-links">
+            <p>
+                <a target="_blank" href="http://dw.taobao.ali.com/index.htm" title="淘数据">淘数据</a>
+                <b>|</b>
+                <a target="_blank" href="http://shuju.taobao.ali.com/klc/index/index.htm" title="知识中心">知识中心</a>
+                <b>|</b>
+                <a target="_blank" href="http://garuda.alibaba-inc.com:8080/console/console.html" title="Garuda控制台">Garuda控制台</a>
+                <b>|</b>
+                <a target="_blank" href="http://cheetah.alibaba-inc.com:8000/index.htm" title="在云端">在云端</a>
+                <b>|</b>
+                <a target="_blank" href="http://www.atatech.org/" title="ATA社区">ATA社区</a>
+                <b>|</b>
+                <a target="_blank" href="https://wf.taobao.org/Portal/Default.aspx" title="工作流平台">工作流平台</a>
+                <b>|</b>
+                <a target="_blank" href="http://bi.tmall.com/actlive/daily.htm?activityId=7" title="天猫直播间">天猫直播间</a>
+                <b>|</b>
+                <a target="_blank" href="http://www.aliway.com" title="阿里味儿">阿里味儿</a>
+            </p>
+            <p>
+                CopyRight 2009-2019 版权所有：淘宝商业智能部
+            </p>
+        </div>
+    </nav>
+</footer>
+<script src="http://a.tbcdn.cn/apps/tdata/js/lib/beast/merge.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/common.js"></script>
+<script src="js/dialogUtil.js"></script>
+<script src="js/dateUtil.js"></script>
+<script src="js/DatePicker/datepicker.js"></script>
+<script src="js/gold.js"></script>
+</body>
+</html>

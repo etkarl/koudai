@@ -1,0 +1,50 @@
+﻿<div class="e-dialog mod-dialog single-calendar-dialog hide">
+    <h2>
+        <label>开店时间</label>    
+        <span title="关闭" class="icon close">&#x3437;</span>
+    </h2>
+    <div class="content-wrap">
+        <div class="content-panel">
+            <div class="date-panel" style="margin-top:10px;">
+                <div class="single-date-panel">
+                    <!-- 如果value=''，请在single-date 加上normal -->
+                    <input class="single-date normal v-single" style="cursor:text" placeholder="请选择日期" value="" id="J_Gmt_D" readonly="readonly" />
+                </div>
+                <div id="J_SingleCalendarPanel_D" class="single-calendar-panel"></div>
+	        </div>
+        </div>
+    </div>
+    <p class="option-panel">
+        <input type="button" value="确 定" class="e-btn e-btn-primary mr10 btnOk" />
+        <input type="button" value="取 消" class="e-btn close" />
+    </p>
+</div>
+<script>
+    (function ($) {
+        $('#J_Gmt_D').click(function () {
+            $('#J_SingleCalendarPanel_D').toggle();
+        });
+        $('#J_SingleCalendarPanel_D').DatePicker({
+            mode: 'single',
+            inline: true,
+            date: DateUtil.strToDate($('#J_Gmt_D').val()), //日历选中的日期
+            current: $('#J_Gmt_D').val() == '' ? DateUtil.strToDate(DateUtil.getDateStrByAddDays(-1)) : DateUtil.strToDate($('#J_Gmt_D').val()), //当前日历面板显示的年月，默认为today所在的月份
+            onChange: function (date, el) {
+                $('#J_Gmt_D').removeClass('normal').val(DateUtil.dateToStr(date));
+                $(el).hide();
+            },
+            range: {
+                //start: DateUtil.strToDate($('#J_MinDate').val()),
+                //end: DateUtil.strToDate($('#J_MaxDate').val())
+            }
+        });
+        $('html').click(function () {
+            if ($('#J_SingleCalendarPanel_D').is(":visible")) {
+                $('#J_SingleCalendarPanel_D').hide();
+            }
+        });
+        $('#J_Gmt_D').click(function (e) {
+            e.stopPropagation();
+        });
+    })(jQuery);
+</script>

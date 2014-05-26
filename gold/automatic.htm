@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html> 
+<!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <html class="ie ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html class="ie ie8"> <![endif]--> 
+<!--[if gte IE 9 ]>    <html class="ie"> <![endif]--> 
+<!--[if !(IE)]><!--> <html> <!--<![endif]--> 
+<head>
+    <title>黄金策--卖家版</title>
+	<!--[if IE]>
+        <script src="http://a.tbcdn.cn/apps/tdata/js/base/html5-reset.js"></script>
+    <![endif]-->
+	<link href="http://a.tbcdn.cn/apps/tdata/css/global/general.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/dialog.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/input-box.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/button.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/table.css" rel="stylesheet" />
+    <link href="http://a.tbcdn.cn/apps/tdata/css/lib/pixie/select.css" rel="stylesheet" />
+    <link href="css/DatePicker/base.css" rel="stylesheet" />
+    <link href="css/DatePicker/clean.css" rel="stylesheet" />
+    <link href="css/calendar.css" rel="stylesheet"/>
+    <link href="css/gold.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <div class="mod-mini-nav">
+        <div class="mini-nav-bd clearfix">
+            <a href="#" class="small-logo">淘数据</a>
+            <ul class="quick-menu">
+                <li>
+                    <a href="#" class="menu-links">使用帮助</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">问题反馈</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">权限申请</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">淘数据</a>
+                    <span class="cut">|</span>
+                    <a href="#" class="menu-links">巨侠</a>
+                    [<a href="#">退出</a>]
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mod-nav">
+        <div class="nav-bd">
+            <h1 class="logo"></h1>
+            <div class="version-select">
+                <select class="chosen-select-no-single" id="J_VersionSelect" tabindex="-1" style="width:110px;">
+                    <option data-url="">卖家分析版</option>
+                    <!--
+				    <option data-url="">淘宝商品版</option>
+				    <option data-url="">淘宝商家版</option>
+				    <option data-url="">阿里云专版</option>
+                    -->
+			    </select>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="layout gold-saler-step1 clearfix" id="J_Container">
+    <h3 class="mod-title clearfix J_TitlePanel">
+        <b class="yahei J_Title">自动分析</b>
+		<span class="e-btn J_BtnMyGroup">我的群组</span>
+		<span class="e-btn J_BtnMyAnalysis">我的分析</span>
+    </h3>
+    <div class="mod-automatic-wrap clearfix">
+        <div class="mod-automatic-panel">
+            <div class="title">
+                <label>样本组</label>
+                <span>天猫会员营销群组</span>
+                <span class="fr">群组规模：<span class="arial">4858956</span></span>
+            </div>
+            <div class="filter">
+                <p class="advance J_SpecialList">
+				    <span>2014-04-19</span>
+			    </p>
+                <ul class="J_NormalList">
+				    <li>卖家层级：超大卖家,大卖家,中卖家,小卖家,微小卖家</li>
+				    <li>商城店铺类型：旗舰店,专卖店,专营店</li>
+                    <li>卖家层级：超大卖家,大卖家,中卖家,小卖家,微小卖家</li>
+				    <li>商城店铺类型：旗舰店,专卖店,专营店</li>
+			    </ul>
+            </div>
+        </div>
+        <div class="mod-automatic-panel">
+            <div class="title">
+                <label>对照组</label>
+                <select class="e-select J_CompareGroup">
+                    <option value="">选择业务线</option>
+                    <option value="天猫">天猫</option>
+				    <option value="集市">集市</option>
+				    <option value="聚划算">聚划算</option>
+				    <option value="淘点点">淘点点</option>
+				    <option value="支付宝">支付宝</option>
+			    </select>
+                <span class="fr">群组规模：<span class="arial">4858956</span></span>
+            </div>
+            <div class="filter">
+                <p class="advance J_SpecialList">
+				    <span>2014-04-19</span>
+			    </p>
+                <ul class="J_NormalList">
+				    <li>卖家层级：超大卖家,大卖家,中卖家,小卖家,微小卖家</li>
+				    <li>商城店铺类型：旗舰店,专卖店,专营店</li>
+                    <li>卖家层级：超大卖家,大卖家,中卖家,小卖家,微小卖家</li>
+				    <li>商城店铺类型：旗舰店,专卖店,专营店</li>
+			    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mod-create">
+		<div><span class="e-btn e-btn-huge" id="J_DoAnalysis">开始分析</span></div>
+        <p>Tips：计算大约需要5分钟</p>
+	</div>
+</div>
+<footer>
+    <nav>
+        <div class="mod-links">
+            <p>
+                <a target="_blank" href="http://dw.taobao.ali.com/index.htm" title="淘数据">淘数据</a>
+                <b>|</b>
+                <a target="_blank" href="http://shuju.taobao.ali.com/klc/index/index.htm" title="知识中心">知识中心</a>
+                <b>|</b>
+                <a target="_blank" href="http://garuda.alibaba-inc.com:8080/console/console.html" title="Garuda控制台">Garuda控制台</a>
+                <b>|</b>
+                <a target="_blank" href="http://cheetah.alibaba-inc.com:8000/index.htm" title="在云端">在云端</a>
+                <b>|</b>
+                <a target="_blank" href="http://www.atatech.org/" title="ATA社区">ATA社区</a>
+                <b>|</b>
+                <a target="_blank" href="https://wf.taobao.org/Portal/Default.aspx" title="工作流平台">工作流平台</a>
+                <b>|</b>
+                <a target="_blank" href="http://bi.tmall.com/actlive/daily.htm?activityId=7" title="天猫直播间">天猫直播间</a>
+                <b>|</b>
+                <a target="_blank" href="http://www.aliway.com" title="阿里味儿">阿里味儿</a>
+            </p>
+            <p>
+                CopyRight 2009-2019 版权所有：淘宝商业智能部
+            </p>
+        </div>
+    </nav>
+</footer>
+
+<script src="http://a.tbcdn.cn/apps/tdata/js/lib/beast/merge.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/common.js"></script>
+<script src="js/dialogUtil.js"></script>
+<script src="js/dateUtil.js"></script>
+<script src="js/DatePicker/datepicker.js"></script>
+<script src="js/gold.js"></script>
+</body>
+</html>

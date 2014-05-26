@@ -1,0 +1,59 @@
+﻿<div class="e-dialog mod-dialog text-area-dialog hide">
+    <h2>
+        <label>文本框</label>
+        <span style="font-size:12px;color:#666">
+            <span class="v-total">0</span>
+            <span>/</span>
+            <span>1000</span>
+        </span>  
+        <span title="关闭" class="icon close">&#x3437;</span>
+    </h2>
+    <div class="content-wrap">
+        <div class="content-panel">
+            <textarea class="e-textarea v-textarea"></textarea>
+        </div>
+    </div>
+    <p class="option-panel">
+        <input type="button" value="确 定" class="e-btn e-btn-primary mr10 btnOk" />
+        <input type="button" value="取 消" class="e-btn close" />
+    </p>
+</div>
+<script>
+    (function ($) {
+        var textAreaControl = new TextAreaControl({
+            container: $('.text-area-dialog'),
+            max: 5
+        });
+        textAreaControl.init();
+        function TextAreaControl(options) {
+            this.container = options.container;
+            this.max = options.max;
+            this.totalLabel = this.container.find('.v-total');
+            this.inputControl = this.container.find('.v-textarea');
+            this.resultInput = this.container.find('.v-result');
+            this.setValue = function () {
+                var that = this, condition = that.inputControl.val(),
+                    items = condition.match(/\,/gi), real = (items == null ? 0 : items.length);
+                if (real > that.max) {
+                    that.totalLabel.html('(<span class="red">' + real + '</span>/' + that.max + ')');
+                    that.container.find('.btnOk').removeClass('e-btn-primary').addClass('e-disabled');
+                }
+                else {
+                    that.totalLabel.html('(' + real + '/' + that.max + ')');
+                    that.container.find('.btnOk').removeClass('e-disabled').addClass('e-btn-primary');
+                }
+                that.resultInput.attr('data-condition', condition).attr('data-conditionName', condition);
+            };
+            this.init = function () {
+                var that = this;
+                that.setValue();
+                that.container.delegate('.v-textarea', 'keyup', function () {
+                    that.setValue();
+                });
+                that.container.delegate('.v-textarea', 'mousedown', function () {
+                    that.setValue();
+                });
+            };
+        }
+    })(jQuery);
+</script>

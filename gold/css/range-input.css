@@ -1,0 +1,18 @@
+﻿/**
+ * 数值区间选择样式
+ * @author : huangjianhua
+ * @createTime : 2014-02-17
+ */
+.widget-range-input{}
+.widget-range-input .range-box{padding:18px 0;}
+.widget-range-input .range-warp{height:6px;background:#e1e1e1;padding-right:30px;}
+.widget-range-input .range-bar{height:6px;width:320px;background:url(../images/rangeBar.png) no-repeat;}
+.widget-range-input .i-min{}
+.widget-range-input .i-avg{}
+.widget-range-input .i-max{}
+.widget-range-input .i-begin{}
+.widget-range-input .i-end{}
+.widget-range-input .v-min{}
+.widget-range-input .v-avg{}
+.widget-range-input .v-max{}
+.widget-range-input .range-begin,.widget-range-input .range-end{width:90px;}

@@ -1,0 +1,60 @@
+﻿<div class="template">
+    <table class="dialog-table">
+        <tr>
+            <td class="col1">数据类型：</td>
+            <td class="col2">
+                 <select class="e-select">
+                    <option>数字类型</option>
+                    <option>Raw列表</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">设置分界点：</td>
+            <td class="col2">
+                <input type="text" class="e-input-box" />
+                <label><input type="radio" name="include" />左包含</label>
+                <label><input type="radio" name="include" />右包含</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">模板名称：</td>
+            <td class="col2">
+                <input type="text" class="e-input-box" />
+                <input type="button"  value="生成模板" class="e-btn" />
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">分层详情：</td>
+            <td class="col2">
+                <table class="table-number">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>分组名</th>
+                            <th>数值表达式</th>
+                            <th>显示控制</th>
+                            <th>序号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>小于等于0</td>
+                            <td>(-∞,0]</td>
+                            <td>
+                                <input type="checkbox" />隐藏
+                            </td>
+                            <td>
+                                <input type="text" class="order" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<p style="padding-left:30px;">
+    <input type="button"  value="保存模板" class="e-btn e-btn-primary" /> 
+</p>

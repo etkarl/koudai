@@ -1,0 +1,94 @@
+﻿<div class="e-dialog mod-dialog double-calendar-dialog hide">
+    <h2>
+        <label>双日历</label>    
+        <span title="关闭" class="icon close">&#x3437;</span>
+    </h2>
+    <div class="content-wrap">
+        <div class="content-panel">
+            <div class="multiple-date" id="J_MultipleDate" style="position:relative;margin-top:10px;cursor:text">
+                <!-- 如果value=''，请加上 J_DataTip -->
+                <span id="J_DateTip" style="position:absolute;top:3px;left:-5px;width:179px;background:#fff;font-weight:normal;color:#999">请选择日期区间</span>
+                <input id="J_StartDate" class="v-start" value="2013-12-12" autocomplete="off" readonly="readonly" />
+                <span>至</span>
+                <input id="J_EndDate" class="v-end" value="2013-12-24" autocomplete="off" readonly="readonly" />
+            </div>
+            <div id="J_MultipleCalendarPanel" class="multiple-calendar-panel" style="top:-5px">
+                <ul class="multiple-calendar-options">
+                    <li>
+                        <span>日期范围</span>
+                    </li>
+                    <li>
+                        <input type="text" class="multiple-calendar-option-box v-start" value="" />
+                        <span class="mlr5">至</span>
+                        <input type="text" class="multiple-calendar-option-box v-end" value="" />
+                    </li>
+                    <li>
+                        <button class="e-btn e-btn-primary" id="J_PickDate">确定</button>
+                        <span class="e-btn" id="J_CancelPickDate">取消</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="option-panel">
+        <input type="button" value="确 定" class="e-btn e-btn-primary mr10 btnOk" />
+        <input type="button" value="取 消" class="e-btn close" />
+    </p>
+</div>
+<script>
+    (function ($) {
+        //双日历
+        $('#J_MultipleDate').click(function () {
+            $('#J_MultipleCalendarPanel').toggle();
+        });
+        $('#J_MultipleCalendarPanel').DatePicker({
+            mode: 'range',
+            inline: true,
+            date: [DateUtil.strToDate($('#J_StartDate').val()), DateUtil.strToDate($('#J_EndDate').val())], //日历选中的日期
+            current: $('#J_StartDate').val() == '' ? DateUtil.strToDate(DateUtil.getDateStrByAddDays(-1)) : DateUtil.strToDate($('#J_StartDate').val()), //当前日历面板显示的年月，默认为today所在的月份
+            calendars: 2,
+            range: {
+                start: DateUtil.strToDate($('#J_MinDate').val()),
+                end: DateUtil.strToDate($('#J_MaxDate').val())
+            },
+            onChange: function (dates, el) {
+                $(el).find('.multiple-calendar-option-box').eq(0).val(DateUtil.dateToStr(dates[0]));
+                $(el).find('.multiple-calendar-option-box').eq(1).val(DateUtil.dateToStr(dates[1]));
+            }
+        });
+        $('#J_PickDate').click(function () {
+            $('#J_CurrentDateRange').val(0);
+            var startStr = $('#J_MultipleCalendarPanel .multiple-calendar-option-box').eq(0).val(),
+    		endStr = $('#J_MultipleCalendarPanel .multiple-calendar-option-box').eq(1).val(),
+    		start = DateUtil.strToDate(startStr),
+    		end = DateUtil.strToDate(endStr),
+    		longTime = end.getTime() - start.getTime(),
+    	    disDays = parseInt(longTime / (1000 * 60 * 60 * 24));
+            if (startStr == '' || endStr == '') {
+                alert('亲，请选择时间区间！');
+                return false;
+            }
+            if (disDays < 90) {
+                $('#J_DateTip').hide();
+                $('#J_StartDate').val(startStr);
+                $('#J_EndDate').val(endStr);
+                $('#J_MultipleCalendarPanel').hide();
+            }
+            else {
+                alert('亲，请选择时间范围不超过90天的区间！');
+                return false;
+            }
+        });
+        $('#J_CancelPickDate').click(function () {
+            $('#J_MultipleCalendarPanel').hide();
+        });
+        $('html').click(function () {
+            if ($('#J_MultipleCalendarPanel').is(":visible")) {
+                $('#J_MultipleCalendarPanel').hide();
+            }
+        });
+        $('#J_MultipleDate,#J_MultipleCalendarPanel').click(function (e) {
+            e.stopPropagation();
+        });
+    })(window.jQuery);
+</script>

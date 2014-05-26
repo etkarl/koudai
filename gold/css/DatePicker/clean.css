@@ -1,0 +1,75 @@
+/* Datepicker border styling */
+.datepicker {
+  background-color: #d7e9fc;
+  border: 1px solid #a0c6ee;
+  padding: 12px;
+}
+
+/* Tighten up the spacing between multiple calendars */
+.datepickerSpace div {
+  width:8px;
+}
+
+/* Grey background behind Month Name row, and blue text */
+div.datepicker th {
+  background-color:#DDDDDD;
+}
+div.datepicker th a.datepickerMonth {
+  color:#666;
+  font-weight:bold;
+}
+
+/* style the day of week header cells */
+div.datepicker th {
+  color: black;
+  font-weight: bold;
+}
+/* grey underline beneath day of week row */
+div.datepicker table thead tr.datepickerDoW th {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* Black text, white background, and grey borders around day cells */
+div.datepicker a,
+div.datepicker a:hover {
+  color: #333;
+}
+div.datepicker .datepickerDays td {
+  border: 1px solid #a0c6ed;
+  background-color: #FFF;
+}
+
+/* blue cell color for selected days */
+div.datepicker tbody.datepickerDays td.datepickerSelected {
+  background-color:#fb9200;
+}
+
+/* Grey out dates in the future */
+div.datepicker td.datepickerFuture a {
+  color:#ccc;
+}
+
+div.datepicker td.datepickerDisabled a {
+  color:#ccc;
+}
+/* yellow cell background on hover */
+div.datepicker tbody.datepickerDays td:hover {
+  background-color: #FFCC33;
+}
+
+/* Bold today's date */
+div.datepicker td.datepickerToday a {
+  font-weight:bold;
+}
+
+/* cells are wider in the clean style */
+.datepickerYears a, .datepickerMonths a {
+  width: 42px;
+}
+.datepickerMonths td:first-child a,
+.datepickerYears td:first-child a {
+  width:39px;
+}
+div.datepicker th a.datepickerMonth {
+  width:107px;
+}

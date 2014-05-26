@@ -1,0 +1,57 @@
+﻿<div class="mod-dialog e-dialog hide" id="J_EditeDialog">
+    <header>
+        <h1 class="title">表变更</h1>
+        <a href="javascrip:void(0)" title="关闭" class="dialog-close-btn">×</a>
+    </header>
+    <table class="dialog-table">
+        <tr>
+            <td class="col1">申请类型：</td>
+            <td>新增源表字段</td>
+        </tr>
+        <tr>
+            <td class="col1">选择源表字段：</td>
+            <td>
+                <div class="mul-left">
+                    <select id="dltSource" name="dltSource" size="10" multiple="multiple">
+                        <option value="可选字段一">可选字段一</option>
+                        <option value="可选字段二">可选字段二</option>
+                        <option value="可选字段三">可选字段三</option>
+                        <option value="可选字段四">可选字段四</option>
+                        <option value="可选字段五">可选字段五</option>
+                        <option value="可选字段六">可选字段六</option>
+                    </select>
+                </div>
+                <div class="mul-center">
+                    <input type="button" value="&gt;" class="btn" onclick="Add(jQuery('#dltSource'),jQuery('#dltTarget'))" />
+                    <input type="button" value="&gt;&gt;" class="btn" onclick="AddAll(jQuery('#dltSource'),jQuery('#dltTarget'))" />
+                    <input type="button" value="&lt;" class="btn" onclick="Add(jQuery('#dltTarget'),jQuery('#dltSource'))" />
+                    <input type="button" value="&lt;&lt;" class="btn" onclick="AddAll(jQuery('#dltTarget'),jQuery('#dltSource'))" />
+                </div>
+                <div class="mul-right">
+                    <select id="dltTarget" name="dltTarget" size="10" multiple="multiple">
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <footer class="footer">
+        <input type="button"  value="提交申请" class="e-btn e-btn-primary mr10 okBtn" /> 
+        <input type="button"  value="取 消" class="e-btn close" />
+    </footer>
+</div>
+<script type="text/javascript">
+   
+    function Add(ObjSource, ObjTarget) {
+        if (ObjSource.val() == null) return;    
+        jQuery.each(ObjSource.val(), function (i, n) {    
+            var html = "<option value='" + n + "'>" + n + "</option>";
+            ObjTarget.append(html);
+        });
+        ObjSource.find("option:selected").remove();  
+    }
+   
+    function AddAll(ObjSource, ObjTarget) {
+        ObjTarget.append(ObjSource.html());  
+        ObjSource.empty();  
+    }
+</script>

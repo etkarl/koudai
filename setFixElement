@@ -9,7 +9,7 @@
 /**
  * set fix elements
  */
-define(function (peach, $) {
+define(function () {
     return {
         isSupportFixed:function () {
             var userAgent = window.navigator.userAgent,

@@ -1,3 +1,7 @@
+我们在开发h5页面的时候，经常会使用position:fix来固定某些元素。
+如果按自适应的方式来布局的话，就是viewport设置成<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />，可以适配所有手机。
+如果设置成类似<meta content="width=640, target-densitydpi=320, user-scalable=0" name="viewport" />，这个属性(position:fix)在安卓4.0以下的部分手机是不支持的，
+对于这个问题，我们需要用一些兼容的方式来解决。以下是一个解决方案：
 /**
  * set fix elements
  */

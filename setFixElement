@@ -1,0 +1,87 @@
+/**
+ * set fix elements
+ */
+define(function (peach, $) {
+    return {
+        isSupportFixed:function () {
+            var userAgent = window.navigator.userAgent,
+                ios = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s([\d_\.]+)/),
+                ios5below = ios && ios[2] && (parseInt(ios[2].replace(/_/g, '.'), 10) < 5),
+                operaMini = /Opera Mini/i.test(userAgent),
+                android = (/android/i).test(navigator.userAgent) && !(/android 4/i).test(navigator.userAgent),
+                body = document.body,
+                div, isFixed;
+
+            div = document.createElement('div');
+            div.style.cssText = 'display:none;position:fixed;z-index:100;';
+            body.appendChild(div);
+            isFixed = window.getComputedStyle(div).position != 'fixed';
+            body.removeChild(div);
+            div = null;
+            return !(isFixed || android || ios5below || operaMini);
+        },
+        set:function(obj,height,callback){
+            var windowWidth,windowHeight,startDisplay,timer = null;
+            if( height == null)height = 100;
+            if(!this.isSupportFixed()){
+                obj.style.position = 'absolute';
+                obj.style.bottom = 'auto';
+                function setElement(){
+                    clearTimeout(timer);
+                    if (window.innerHeight) {
+                        windowWidth=window.innerWidth;
+                        windowHeight=window.innerHeight;
+                    }else if (document.documentElement&&document.documentElement.clientHeight) {
+                        windowWidth=document.documentElement.clientWidth;
+                        windowHeight=document.documentElement.clientHeight;
+                    } else if (document.body) {
+                        windowWidth=document.body.clientWidth;
+                        windowHeight=document.body.clientHeight;
+                    }
+                    var st = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                    obj.style.top = (height<=0?(st-height):(st+ windowHeight -height))+'px';
+                    timer = setTimeout(function(){
+                        obj.style.display = obj.sourceDisplay;
+                        timer = null;
+                        Object.prototype.toString.call(callback) === '[object Function]'
+                        && callback();
+                    },100);
+                }
+
+                document.body.addEventListener('touchstart', function(e) {
+                    var target,
+                        e = e || getEvent(),
+                        target = e.target || e.srcElement;
+
+                    if(obj.contains && obj.contains(target)) return;
+                    if(!obj.sourceDisplay){
+                        obj.sourceDisplay = obj.style.display;
+                    }
+                    obj.style.display = 'none';
+                    timer = setTimeout(function(){
+                        obj.style.display = obj.sourceDisplay;
+                        timer = null;
+                    },1000);
+                },false);
+                document.body.addEventListener('touchmove', function(e) {
+                    var target,
+                        e = e || getEvent(),
+                        target = e.target || e.srcElement;
+
+                    if(obj.contains && obj.contains(target)) return;
+                    clearTimeout(timer);
+                    timer = setTimeout(function(){
+                        obj.style.display = obj.sourceDisplay;
+                        timer = null;
+                    },100);
+                },false);
+                window.addEventListener('scroll', setElement, false);
+                setElement();
+            } else {
+                if(Object.prototype.toString.call(callback) === '[object Function]'){
+                    window.addEventListener('scroll', callback, false);
+                }
+            }
+        }
+    }
+});
